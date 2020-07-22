@@ -4,11 +4,20 @@ if ( ! class_exists( 'JMTestimonialsAdmin' ) ) {
         public function __construct()
         {
             // todo: add actions for the custom post type
+            add_action('init',array($this,'create_post_type'));
         }
 
         public function create_post_type()
         {
-            // todo: create post type
+            register_post_type('testimonials', array(
+                'labels' => array('name' => 'Testimonials',
+                    'singular' => 'Testimonial'),
+                'hierarchical' => true,
+                'menu_icon' => 'dashicons-testimonial',
+                'public' => true,
+                'has_archive' => true,
+                'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+            ));
         }
 
         public function columns_head($defaults)
@@ -22,6 +31,7 @@ if ( ! class_exists( 'JMTestimonialsAdmin' ) ) {
         }
 
     }
-    $jm_testimonials = new JMTestimonialsAdmin;
+
 }
 
+$jm_testimonials_admin = new JMTestimonialsAdmin();

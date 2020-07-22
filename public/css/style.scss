@@ -1,0 +1,19 @@
+body {
+  //background-color: orange;
+}
+
+.testimonial-slider-wrapper {
+  background-image: url('../images/background-image.jpg');
+  background-size: cover;
+  background-position: center center;
+  object-fit: cover;
+  background-color: #00A8EF;
+  .slider-wrapper {
+    display: flex !important;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
